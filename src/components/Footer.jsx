@@ -73,8 +73,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
                   >
                     <span className="hover:translate-x-1 transition-transform">
@@ -92,8 +92,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link 
-                    href={service.href} 
+                  <Link
+                    href={service.href}
                     className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
                   >
                     <span className="hover:translate-x-1 transition-transform">
@@ -114,8 +114,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {resources.map((resource) => (
                 <li key={resource.name}>
-                  <Link 
-                    href={resource.href} 
+                  <Link
+                    href={resource.href}
                     className="hover:text-blue-400 text-base md:text-lg transition-colors flex items-center"
                   >
                     <span className="hover:translate-x-1 transition-transform">
@@ -132,7 +132,7 @@ const Footer = () => {
             {/* Newsletter Signup Section */}
             <div className="space-y-4">
               <h3 className="text-white text-xl font-semibold">Subscribe to Our Newsletter</h3>
-              <form 
+              <form
                 className="flex flex-col space-y-3"
                 onSubmit={handleSubmit}
               >
@@ -158,26 +158,26 @@ const Footer = () => {
             <div className="  rounded-lg space-y-4">
               <h3 className="text-xl font-semibold text-white">Connect With Us</h3>
               <div className="flex flex-col space-y-4">
-                <a 
-                  href="tel:+12034709377" 
+                <a
+                  href="tel:+12034709377"
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
                   <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className="text-base md:text-lg">+1 (203) 470-9377</span>
                 </a>
 
-                <a 
-                  href="mailto:nsimek@scfstrategies.com" 
+                <a
+                  href="mailto:nsimek@scfstrategies.com"
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
                   <HiOutlineMail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   <span className="text-base md:text-lg">nsimek@scfstrategies.com</span>
                 </a>
 
-                <a 
-                  href="https://www.google.com/maps/place/Bonita+Springs,+FL" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.google.com/maps/place/Bonita+Springs,+FL"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
                   <FaLocationArrow className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -194,22 +194,29 @@ const Footer = () => {
         <div className="container mx-auto max-w-7xl p-4">
           <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:justify-between md:items-center">
             {/* Developer Credit */}
-            <div className="order-3 md:order-1 flex items-center space-x-2 justify-center md:justify-start">
-              <Image 
-                src="https://www.tltechnologies.net/assets/logo-D0OpDRUY.svg" 
-                width={40} 
-                height={40} 
-                alt="TL Technologies Logo" 
-                className="h-10 w-10"
-              />
-              <Link 
-                href="https://connect.tltechnologies.net/" 
-                className="text-gray-400 hover:text-blue-400 transition-colors text-base md:text-lg" 
-                target="_blank" 
+            <div className="order-3 md:order-1 flex items-center mt-2 md:mt-0 space-x-2 justify-center md:justify-start">
+
+              <Link
+                href="https://connect.tltechnologies.net/"
+                className="text-gray-400 hover:text-blue-400 transition-colors text-base md:text-lg"
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                Developed by TL Technologies
+                Developed by
               </Link>
+              <a href="https://tltechnologies.net/" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/images/Logo TL white.png"
+                width={100} 
+                height={24}
+                alt="TL Technologies Logo"
+                className="h-8 md:h-9 w-auto"
+                quality={100} 
+                priority 
+                unoptimized 
+              />
+              </a>
+              
             </div>
 
             {/* Copyright */}
