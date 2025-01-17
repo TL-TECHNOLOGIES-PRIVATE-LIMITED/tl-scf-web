@@ -1,5 +1,5 @@
 import React from "react";
-import { FaIndustry, FaHospital, FaCar, FaUniversity, FaBuilding, FaPlane, FaShieldAlt } from "react-icons/fa";
+import { FaIndustry, FaHospital, FaCar, FaUniversity, FaBuilding,FaMoneyCheckAlt , FaPlane, FaShieldAlt } from "react-icons/fa";
 import { HiDatabase } from "react-icons/hi";
 
 const FuturisticBackground = () => (
@@ -47,11 +47,11 @@ const FuturisticBackground = () => (
 const industries = [
   { icon: <FaIndustry className={getRandomColor()} />, title: "Manufacturing" },
   { icon: <FaHospital className={getRandomColor()} />, title: "Healthcare" },
-  { icon: <FaCar className={getRandomColor()} />, title: "Automobile" },
+  { icon: <FaCar className={getRandomColor()} />, title: "Automotive" },
   { icon: <FaUniversity className={getRandomColor()} />, title: "Banking" },
   { icon: <FaBuilding className={getRandomColor()} />, title: "Real Estate" },
-  { icon: <FaPlane className={getRandomColor()} />, title: "Fintech" },
-  { icon: <FaShieldAlt className={getRandomColor()} />, title: "Automotive" },
+  { icon: <FaMoneyCheckAlt  className={getRandomColor()} />, title: "Fintech" },
+  // { icon: <FaShieldAlt className={getRandomColor()} />, title: "Automotive" },
   { icon: <HiDatabase className={getRandomColor()} />, title: "Retail" },
 ];
 
