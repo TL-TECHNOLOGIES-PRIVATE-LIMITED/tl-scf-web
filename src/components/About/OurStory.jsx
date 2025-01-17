@@ -11,9 +11,11 @@ const OurStory = () => {
     <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
       {/* Text Content - Left Side */}
       <div className="w-full md:w-1/2 space-y-6">
-        <p className="paragraph">
-          Founded in <strong>2015</strong>, <strong>SCF Strategies</strong> emerged from the recognition that traditional Supply Chain Finance providers typically offer either <strong>funding</strong> or <strong>technology</strong>, but rarely both in an integrated manner. <br /> With over <strong>15 years of experience</strong> in originating, implementing, and managing Supplier Finance programs that exceed <strong>$150 billion</strong> in trading volume and yield more than <strong>$2 billion</strong> in outstanding results.
-        </p>
+      <p className="paragraph">
+  Founded in <strong>2015</strong>, <strong>SCF Strategies</strong> was created to bridge the gap between traditional Supply Chain Finance providers, who typically offer either <strong>funding</strong> or <strong>technology</strong>, but rarely both in an integrated manner. We take a fully integrated approach, seamlessly combining these critical components to provide optimal solutions for our clients. <br />
+  Backed by over <strong>60 years of collective experience</strong>, our team has designed, implemented, and managed hundreds of Supplier Finance programs globally, driving over <strong>$150 billion</strong> in trading volume and unlocking more than <strong>$2 billion</strong> in working capital for businesses worldwide, empowering them to thrive.
+</p>
+
 
         <p className="paragraph">
           True value comes from integrating best practice processes with <strong>technology</strong> and <strong>funding capacity</strong>. <br /> We know that no amount of funding or sophisticated technology can compensate for poor practices, missed steps, or overlooked success factors. Today, <strong>SCF Strategies</strong> is recognized as an <strong>industry leader</strong> in SCF consulting.
