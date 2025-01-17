@@ -48,7 +48,7 @@ const ContactContent = () => {
     </a>
 
     {/* Phone Card */}
-    <a href="tel:+12034709377" className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
+    <a href="tel:+12392274289 " className="bg-white rounded-lg shadow-lg p-6 transform transition-all duration-200 hover:scale-105">
         <div className="flex flex-col items-center text-center space-y-4">
             <div className="p-3 bg-blue-100 rounded-full">
                 <Phone className="w-6 h-6 text-blue-600" />
