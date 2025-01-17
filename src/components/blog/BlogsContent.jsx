@@ -42,7 +42,7 @@ const BlogCard = ({ post }) => {
           
           <p className="text-gray-600 flex gap-2 text-xs">
             <BsCalendar2Date className="text-black" />
-            {post.author} / {post.date}
+            {post.author} 
           </p>
           <h3 className="mt-1 text-lg font-semibold text-title line-clamp-2">
             {post.title}
