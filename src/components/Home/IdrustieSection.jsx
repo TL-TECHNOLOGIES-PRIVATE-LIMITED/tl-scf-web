@@ -1,5 +1,6 @@
 import React from "react";
-import { FaIndustry, FaHospital, FaCar, FaUniversity, FaBuilding, FaPlane, FaShieldAlt, FaBitcoin } from "react-icons/fa";
+import { FaIndustry, FaHospital, FaCar, FaUniversity, FaBuilding, FaPlane, FaShieldAlt } from "react-icons/fa";
+import { HiDatabase } from "react-icons/hi";
 
 const FuturisticBackground = () => (
   <div className="absolute inset-0 w-full h-full overflow-hidden opacity-10">
@@ -49,9 +50,9 @@ const industries = [
   { icon: <FaCar className={getRandomColor()} />, title: "Automobile" },
   { icon: <FaUniversity className={getRandomColor()} />, title: "Banking" },
   { icon: <FaBuilding className={getRandomColor()} />, title: "Real Estate" },
-  { icon: <FaPlane className={getRandomColor()} />, title: "Logistics" },
-  { icon: <FaShieldAlt className={getRandomColor()} />, title: "Insurance" },
-  { icon: <FaBitcoin className={getRandomColor()} />, title: "Capital Markets" },
+  { icon: <FaPlane className={getRandomColor()} />, title: "Fintechs" },
+  { icon: <FaShieldAlt className={getRandomColor()} />, title: "Automotive" },
+  { icon: <HiDatabase className={getRandomColor()} />, title: "Retail" },
 ];
 
 function getRandomColor() {
