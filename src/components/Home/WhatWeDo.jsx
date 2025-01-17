@@ -161,10 +161,10 @@ const WhatWeDo = () => {
    
 
     {/* Main text content with higher z-index */}
-    <p className="paragraph relative  font-bold z-10">
-      Our team brings <span className="font-extrabold bg-stone-100 text-cyan-700 rounded px-2">over 15 years</span> of hands-on experience with{' '}
-      <span className="font-extrabold text-cyan-700 bg-stone-100 rounded px-2 ">100+ SCF programs</span> implemented worldwide.
-    </p>
+    <p className="paragraph relative font-bold z-10">
+  Our team brings <span className="font-extrabold bg-stone-100 text-cyan-700 rounded px-2">a combined 60 years</span> of hands-on experience with{' '}
+  <span className="font-extrabold text-cyan-700 bg-stone-100 rounded px-2">100+ SCF programs</span> implemented worldwide.
+</p>
   </div>
 </div>
 
