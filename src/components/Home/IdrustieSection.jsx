@@ -50,7 +50,7 @@ const industries = [
   { icon: <FaCar className={getRandomColor()} />, title: "Automobile" },
   { icon: <FaUniversity className={getRandomColor()} />, title: "Banking" },
   { icon: <FaBuilding className={getRandomColor()} />, title: "Real Estate" },
-  { icon: <FaPlane className={getRandomColor()} />, title: "Fintechs" },
+  { icon: <FaPlane className={getRandomColor()} />, title: "Fintech" },
   { icon: <FaShieldAlt className={getRandomColor()} />, title: "Automotive" },
   { icon: <HiDatabase className={getRandomColor()} />, title: "Retail" },
 ];
