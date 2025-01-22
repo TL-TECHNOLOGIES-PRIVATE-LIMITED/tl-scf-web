@@ -13,6 +13,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram, FaLocatio
 import { subscribeToNewsletter } from '@/app/action';
 import XIcon from './ui/XIcon';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,9 +26,11 @@ const Footer = () => {
     try {
       console.log(email);
       await subscribeToNewsletter(email);
+      toast.success('Message sent successfully!');
       setEmail('');
     } catch (error) {
       console.error('Subscription error:', error);
+      toast.error('Failed to sent message!');
     } finally {
       setIsLoading(false);
     }
