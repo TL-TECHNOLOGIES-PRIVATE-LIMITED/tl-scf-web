@@ -47,7 +47,7 @@ const DiscoverSection = () => {
         <p className="paragraph">
   <strong>Unlock working capital</strong> and optimize your supply chain with our innovative financing solutions.<br />
   We <strong>bridge the gap</strong> between suppliers and buyers, enabling <strong>faster payments</strong>, <strong>stronger supplier relationships</strong>, and <strong>improved cash flow management</strong>.<br />
-  Our platform empowers businesses of all sizes to thrive in today's <strong>dynamic market</strong>.
+  Our platform empowers businesses of all sizes to thrive in today&apos;s <strong>dynamic market</strong>.
 </p>
 
         <CustomeButton title={"Discover more"}/>
