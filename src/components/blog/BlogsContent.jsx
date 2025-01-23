@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
 import { BsCalendar2Date } from 'react-icons/bs';
@@ -80,59 +80,30 @@ const BlogContent = () => {
   const [selectedTag, setSelectedTag] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [blogPosts, setBlogPosts] = useState([]);
 
-  const blogPosts = [
-    {
-      id: 'roundtable-txf-ny-2018',
-      title: 'Roundtable on Supply Chain Finance at TXF in New York',
-      author: 'SCF Strategies',
-      date: 'September 17, 2018',
-      category: 'Industry Events',
-      tags: ['Trade Dynamics', 'Innovation', 'Supply Chain Engagement'],
-      image: '/images/blog/1.png',
-      excerpt: 'SCF Strategies participated in the TXF Conference in New York, discussing emerging trends and the impact of trade dynamics.',
-    },
-    {
-      id: 'baft-scf-bootcamp-2018',
-      title: 'SCF Strategies at the BAFT Supply Chain Finance Bootcamp',
-      author: 'SCF Strategies',
-      date: 'September 17, 2018',
-      category: 'Best Practices',
-      tags: ['Technology', 'Best Practices', 'Innovation'],
-      image: '/images/blog/2.png',
-      excerpt: 'SCF Strategies attended the BAFT Bootcamp, focusing on technological innovations and best practices in SCF programs.',
-    },
-    {
-      id: '4-key-success-factors-scf',
-      title: '4 Key Success Factors for Effective Supply Chain Finance',
-      author: 'SCF Strategies',
-      date: 'October 30, 2018',
-      category: 'Supply Chain Finance',
-      tags: ['Target Setting', 'Structure Selection', 'Best Practices'],
-      image: '/images/blog/3.png',
-      excerpt: 'This post outlines four essential success factors for SCF programs, including setting clear targets and selecting the right structure.',
-    },
-    {
-      id: 'supplier-onboarding-guide',
-      title: 'Supplier Onboarding - It&apos;s Not as Tough as You Think',
-      author: 'SCF Strategies',
-      date: 'October 6, 2018',
-      category: 'Best Practices',
-      tags: ['Supplier Onboarding', 'Supply Chain Engagement'],
-      image: '/images/blog/4.png',
-      excerpt: 'An introduction to the importance of effective supplier onboarding in SCF, highlighting challenges and best practices.',
-    },
-    {
-      id: 'critical-need-scf-2018',
-      title: 'Filling a Critical Need in Supply Chain Finance',
-      author: 'SCF Strategies',
-      date: 'September 25, 2018',
-      category: 'Case Studies',
-      tags: ['Case Study', 'Risk Management', 'Technology'],
-      image: '/images/blog/5.png',
-      excerpt: 'SCF Strategies emphasizes the need for comprehensive knowledge in SCF, showcasing a case study on supplier engagement.',
+  const fetchBlogs = async () => {
+    try {
+      const response = await fetch('https://scf-cms-be-hz4e.onrender.com/api/v1/web/blog/get-all-blogs');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json(); // Extract JSON data from response
+      console.log('Blogs:', data);
+      setBlogPosts(data.data); // Use the actual data from the API response
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  
+  
 
   const popularPosts = [
     {
