@@ -86,7 +86,7 @@ export default function ClientLayout({ children }) {
   // Fetch company details on component mount
   useEffect(() => {
     fetchCompanyDetails();
-  }, []);
+  });
 
   if (!isMounted) {
     return null;

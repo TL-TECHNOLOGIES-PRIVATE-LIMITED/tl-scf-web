@@ -23,7 +23,7 @@ const ContactContent = () => {
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10">
             <h2 className="subheading">Get in Touch</h2>
-            <p className="paragraph">We're here to help. Reach out anytime.</p>
+            <p className="paragraph">We are here to help. Reach out anytime.</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-4 py-8">
               {/* Contact Form */}

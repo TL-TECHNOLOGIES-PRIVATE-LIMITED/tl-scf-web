@@ -61,7 +61,7 @@ const Navbar = () => {
   useEffect(() => {
     fetchCompanyDetails();
     console.log(logoUrl,"log")
-  }, []);
+  });
 
   useEffect(() => {
     const handleScroll = () => {

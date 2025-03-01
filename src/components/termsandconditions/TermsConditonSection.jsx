@@ -8,7 +8,7 @@ const TermsConditionSection = () => {
 
   useEffect(() => {
     fetchTerms();
-  }, []);
+  });
 
   // Function to add Tailwind styles dynamically
   const addCustomStyles = (htmlContent) => {
