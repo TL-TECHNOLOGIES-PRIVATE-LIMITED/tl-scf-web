@@ -58,7 +58,7 @@ const PrivacyPolicyPage = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="mb-12 text-center">
+        {/* <div className="mb-12 text-center">
           <div className="flex flex-row justify-center items-center">
             <LockKeyhole className="w-8 h-8 text-blue-600 mr-3" />
             <h1 className="subheading">Privacy Policy</h1>
@@ -71,15 +71,13 @@ const PrivacyPolicyPage = () => {
           <p className="paragraph">
             At SCF Strategies, we are committed to protecting your privacy and ensuring the security of your personal information. <br/> This Privacy Policy outlines how we collect, use, and safeguard your data when you interact with our website, services, and communications.
           </p>
-        </div>
+        </div> */}
 
-        {policyData.map((section, index) => (
+      
           <PrivacyPolicySection
-            key={index}
-            title={section.title}
-            content={section.content}
+            
           />
-        ))}
+     
 
         <div className="mt-12 py-8 flex flex-col bg-white  shadow-xl rounded-xl items-center relative z-10">
           <p className="paragraph text-center">

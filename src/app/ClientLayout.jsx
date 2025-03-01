@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import CookieConsent from '@/components/CookieConsent';
 import Loading from '@/components/Loading';
 import WaveSeparator from '@/components/ui/WaveSeparator';
+import useCompanyStore from '@/store/useCompanyStore'; // Zustand store
 
 const LOADING_DURATION = 1000;
 
@@ -19,7 +20,8 @@ export default function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
-  
+  const { fetchCompanyDetails } = useCompanyStore(); // Zustand fetch function
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -30,7 +32,6 @@ export default function ClientLayout({ children }) {
         setLoading(false);
         setIsFirstLoad(false);
       }, LOADING_DURATION);
-
       return () => clearTimeout(timer);
     }
   }, [isFirstLoad]);
@@ -41,14 +42,12 @@ export default function ClientLayout({ children }) {
       const timer = setTimeout(() => {
         setLoading(false);
       }, LOADING_DURATION);
-
       return () => clearTimeout(timer);
     }
   }, [pathname, isFirstLoad]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -84,6 +83,11 @@ export default function ClientLayout({ children }) {
     return () => ctx.revert();
   }, [loading]);
 
+  // Fetch company details on component mount
+  useEffect(() => {
+    fetchCompanyDetails();
+  }, []);
+
   if (!isMounted) {
     return null;
   }
@@ -91,17 +95,13 @@ export default function ClientLayout({ children }) {
   return (
     <>
       {loading && <Loading />}
-      
       <div className={`transition-opacity duration-300 relative ${loading ? 'opacity-0' : 'opacity-100'}`}>
-      
         <Navbar />
         <ChatbotPreview />
         <main ref={pageRef} className="transition-opacity ease-in-out">
           {children}
         </main>
         {pathname !== '/' && <WaveSeparator />}
-
-
         <Toaster position="bottom-center" duration={500} />
         <CookieConsent />
         <Footer />

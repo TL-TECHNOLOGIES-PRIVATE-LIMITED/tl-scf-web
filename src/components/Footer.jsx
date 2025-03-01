@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiOutlineMail } from "react-icons/hi";
 import Link from 'next/link';
 import {
@@ -14,27 +14,50 @@ import { subscribeToNewsletter } from '@/app/action';
 import XIcon from './ui/XIcon';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import useCompanyStore from '@/store/useCompanyStore';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const { phone,companymail, fetchCompanyDetails } = useCompanyStore();
 
+  useEffect(() => {
+    fetchCompanyDetails();
+   
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    // logoUrl: '',
+    // location: '',
+    // email: '',
+    // phone: '',
+    // mapUrl: '',
     try {
-      console.log(email);
-      await subscribeToNewsletter(email);
-      toast.success('Message sent successfully!');
-      setEmail('');
+      const response = await fetch("https://scf-cms-be-p7i0.onrender.com/api/v1/web/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+  console.log(response)
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+  
+      const data = await response.json();
+      toast.success(data.message || "Subscribed successfully!");
+      setEmail("");
     } catch (error) {
-      console.error('Subscription error:', error);
-      toast.error('Failed to sent message!');
+      console.error("Subscription error:", error);
+      toast.error("Failed to subscribe. Please try again.");
     } finally {
       setIsLoading(false);
     }
   };
+  
 
   const quickLinks = [
     { name: 'Home', href: '/' },
@@ -162,19 +185,19 @@ const Footer = () => {
               <h3 className="text-xl font-semibold text-white">Connect With Us</h3>
               <div className="flex flex-col space-y-4">
                 <a
-                  href="tel:+12392274289 "
+                  href={`tel:${phone}`}
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
                   <PhoneIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span className="text-base md:text-lg">+1 239 227 4289 </span>
+                  <span className="text-base md:text-lg">{phone} </span>
                 </a>
 
                 <a
-                  href="mailto:nsimek@scfstrategies.com"
+                  href={`mailto:${companymail}`}
                   className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
                 >
                   <HiOutlineMail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span className="text-base md:text-lg">nsimek@scfstrategies.com</span>
+                  <span className="text-base md:text-lg">{companymail}</span>
                 </a>
 
                 {/* <a

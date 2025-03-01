@@ -119,7 +119,7 @@ const TermsAndConditionsPage = () => {
             />
 
             <div className="max-w-7xl mx-auto px-4 py-12">
-                <div className="mb-12 text-center">
+                {/* <div className="mb-12 text-center">
                     <div className="flex justify-center items-center mb-12">
                         <CgFileDocument className="w-8 h-8 text-blue-600 mr-3" />
                         <h1 className="text-xl md:text-3xl font-bold text-gray-900">
@@ -132,15 +132,13 @@ const TermsAndConditionsPage = () => {
                     <p className="text-gray-700 text-lg">
                         Welcome to SCF Strategies, where we specialize in helping businesses maximize the success of their Supply Chain Finance (SCF) programs. By engaging with our advisory services, you agree to the following terms and conditions. Please read them carefully before proceeding.
                     </p>
-                </div>
+                </div> */}
 
-                {termsData.map((section, index) => (
+              
                     <TermsConditionSection
-                        key={index}
-                        title={section.title}
-                        content={section.content}
+                        
                     />
-                ))}
+             
 
                 <div className="max-w-5xl mx-auto mb-12 text-center">
                     <div className="flex justify-center items-center mb-8">

@@ -23,17 +23,32 @@ const ContactForm = () => {
     const onSubmit = async (data) => {
         try {
             setLoading(true);
-            await submitContact(data);
-            console.log('Form submitted successfully');
-            toast.success('Message sent successfully!');
-            setLoading(false);
-            reset();
+            
+            const response = await fetch("https://scf-cms-be-p7i0.onrender.com/api/v1/web/enquiries/create-enquiry", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+    
+            const result = await response.json();
+            console.log(result)
+    
+            if (response.ok) {
+                toast.success("Message sent successfully!");
+                reset();
+            } else {
+                toast.error(result.message || "Failed to send message!");
+            }
         } catch (error) {
-            console.error('An error occurred', error);
-            toast.error('Failed to sent message!');
+            console.error("An error occurred", error);
+            toast.error("Something went wrong! Try again later.");
+        } finally {
             setLoading(false);
         }
     };
+    
 
     const inputStyle = `w-full px-4 py-3 border rounded-lg transition-colors text-black outline-none font-outfit text-base placeholder:text-base`;
 
