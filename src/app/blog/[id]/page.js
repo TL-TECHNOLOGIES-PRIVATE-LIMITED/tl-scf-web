@@ -37,7 +37,7 @@ export default function BlogPost() {
     if (params?.id) {
       fetchPost();
     }
-  }, []);
+  }, [params]);
 
   if (loading) {
     return (
