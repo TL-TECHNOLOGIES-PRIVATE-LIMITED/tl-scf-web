@@ -25,7 +25,7 @@ const Footer = () => {
   useEffect(() => {
     fetchCompanyDetails();
    
-  });
+  },[fetchCompanyDetails]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
