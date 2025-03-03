@@ -6,7 +6,7 @@ const usePrivacyStore = create((set) => ({
     content: '',
     fetchPrivacy: async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/web/document/get-privacy');
+            const response = await axios.get('https://scf-cms-be-p7i0.onrender.com/api/v1/web/document/get-privacy');
             const { title, content } = response.data.document;
             set({ title, content });
         } catch (error) {

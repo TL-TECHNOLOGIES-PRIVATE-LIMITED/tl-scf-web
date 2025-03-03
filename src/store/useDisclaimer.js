@@ -6,7 +6,7 @@ const useDisclaimer = create((set) => ({
     content: '',
     fetchDisclaimer: async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/web/document/get-desclaimer');
+            const response = await axios.get('https://scf-cms-be-p7i0.onrender.com/api/v1/web/document/get-desclaimer');
             const { title, content } = response.data.document;
             set({ title, content });
         } catch (error) {
