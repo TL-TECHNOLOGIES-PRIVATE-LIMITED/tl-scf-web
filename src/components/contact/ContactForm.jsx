@@ -24,7 +24,7 @@ const ContactForm = () => {
         try {
             setLoading(true);
             
-            const response = await fetch("https://scf-cms-be-p7i0.onrender.com/api/v1/web/enquiries/create-enquiry", {
+            const response = await fetch("https://scf-cms-be-360l.onrender.com/api/v1/web/enquiries/create-enquiry", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

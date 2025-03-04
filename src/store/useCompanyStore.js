@@ -17,7 +17,7 @@ const useCompanyStore = create((set) => ({
 
     fetchCompanyDetails: async () => {
         try {
-            const response = await fetch("https://scf-cms-be-p7i0.onrender.com/api/v1/admin/company/settings");
+            const response = await fetch("https://scf-cms-be-360l.onrender.com/api/v1/admin/company/settings");
             if (!response.ok) {
                 throw new Error("Failed to fetch company details");
             }

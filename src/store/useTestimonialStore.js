@@ -8,7 +8,7 @@ const useTestimonialStore = create((set) => ({
     fetchTestimonials: async () => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch('https://scf-cms-be-p7i0.onrender.com/api/v1/web/contents/testimonials');
+            const response = await fetch('https://scf-cms-be-360l.onrender.com/api/v1/web/contents/testimonials');
             if (!response.ok) throw new Error('Failed to fetch testimonials');
             const data = await response.json();
             set({ testimonials: data?.data || [], loading: false });

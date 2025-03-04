@@ -16,7 +16,7 @@ export default function BlogPost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await fetch(`https://scf-cms-be-p7i0.onrender.com/api/v1/web/blog/get-blog/${params?.id}`);
+        const res = await fetch(`https://scf-cms-be-360l.onrender.com/api/v1/web/blog/get-blog/${params?.id}`);
         if (!res.ok) throw new Error("Blog post not found");
         const data = await res.json();
         console.log(data);

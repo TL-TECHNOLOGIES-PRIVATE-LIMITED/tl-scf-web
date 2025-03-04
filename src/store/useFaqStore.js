@@ -8,7 +8,7 @@ const useFaqStore = create((set) => ({
     fetchFaqs: async () => {
         set({ loading: true, error: null });
         try {
-            const response = await fetch('https://scf-cms-be-p7i0.onrender.com/api/v1/web/qna/get-faqs');
+            const response = await fetch('https://scf-cms-be-360l.onrender.com/api/v1/web/qna/get-faqs');
             if (!response.ok) throw new Error('Failed to fetch FAQs');
             const data = await response.json();
             console.log(data)

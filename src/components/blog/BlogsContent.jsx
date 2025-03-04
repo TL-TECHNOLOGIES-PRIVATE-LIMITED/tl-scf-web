@@ -84,7 +84,7 @@ const BlogContent = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('https://scf-cms-be-p7i0.onrender.com/api/v1/web/blog/get-all-blogs');
+      const response = await fetch('https://scf-cms-be-360l.onrender.com/api/v1/web/blog/get-all-blogs');
       
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
